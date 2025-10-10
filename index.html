@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="public/assets/stylesheet/app.css">
     <link rel="stylesheet" href="public/assets/stylesheet/vairable.css">
+    <link rel="stylesheet" href="public/assets/stylesheet/style1.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +18,8 @@
 
 <body>
     <main class=" bg-[#212428] overflow-x-hidden ">
+        <span class="mouse mouse_lg"></span>
+        <span class="mouse mouse_sm"></span>
         <header class="w-full min-h-[80vh] md:min-h-[110vh] lg:min-h-[100vh]"
             style="background-image: url(public/assets/img/img-2.jpg); background-size: cover; background-position: center;">
             <div class=" w-full h-[80vh] md:min-h-[110vh] lg:min-h-[100vh] absolute inset-0 bg-[#08080830] rounded-xl">
@@ -488,5 +491,17 @@
         </footer>
     </main>
 </body>
+<script>
+    let mouses = document.querySelectorAll('.mouse')
+    document.addEventListener('mousemove' , (e)=>{
+        let x = e.clientX
+        let y = e.clientY
+        mouses.forEach((mouse, index)=>{
+            mouse.style.left=`${x}px`
+            mouse.style.top=`${y}px`
+
+        })
+    })
+</script>
 
 </html>
